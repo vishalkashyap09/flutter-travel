@@ -82,35 +82,50 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              Row(
-                children: [
-                  TabDestination(
-                    imageAsset: "assets/image_destination1.png",
-                    content: "India",
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Container(
+                  child: Row(
+                    children: [
+                      TabDestination(
+                        imageAsset: "assets/image_destination1.png",
+                        content: "Orissa",
+                      ),
+                      SizedBox(width: 28),
+                      TabDestination(
+                        imageAsset: "assets/image_destination2.png",
+                        content: "Tamil Nadu",
+                      ),
+                      SizedBox(width: 28),
+                      TabDestination(
+                        imageAsset: "assets/image_destination3.png",
+                        content: "Punjab",
+                      ),
+                      SizedBox(width: 28),
+                      TabDestination(
+                        imageAsset: "assets/image_destination4.png",
+                        content: "Uttar Pradesh",
+                      ),
+                      SizedBox(width: 28),
+                      TabDestination(
+                        imageAsset: "assets/image_destination4.png",
+                        content: "Jharkhand",
+                      ),
+                      SizedBox(width: 28),
+                      TabDestination(
+                        imageAsset: "assets/image_destination4.png",
+                        content: "Bihar",
+                      ),
+                    ],
                   ),
-                  SizedBox(width: 28),
-                  TabDestination(
-                    imageAsset: "assets/image_destination2.png",
-                    content: "New York",
-                  ),
-                  SizedBox(width: 28),
-                  TabDestination(
-                    imageAsset: "assets/image_destination3.png",
-                    content: "Australia",
-                  ),
-                  SizedBox(width: 28),
-                  TabDestination(
-                    imageAsset: "assets/image_destination4.png",
-                    content: "Poland",
-                  ),
-                ],
-              ),
+                ),
+              )
             ],
           ),
         );
       }
 
-      Widget ourProperties() {
+      Widget exploreThese() {
         return Container(
           margin: EdgeInsets.only(bottom: 28),
           child: Column(
@@ -120,7 +135,7 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Our Properties',
+                    'Explore These',
                     style: blackTextStyle.copyWith(
                       fontSize: 20,
                     ),
@@ -140,8 +155,8 @@ class HomePage extends StatelessWidget {
                     children: [
                       PropertyCard(
                         imageUrl: "assets/image_property1.png",
-                        title: "Misty Rock Resort",
-                        location: "Wayanad",
+                        title: "Kedarnath",
+                        location: "Uttarakhand",
                         onClick: () {
                           Navigator.pushNamed(context, "/detail-page");
                         },
@@ -149,8 +164,15 @@ class HomePage extends StatelessWidget {
                       SizedBox(width: 36),
                       PropertyCard(
                         imageUrl: "assets/image_property2.png",
-                        title: "Misty Rock Resort",
-                        location: "Wayanad",
+                        title: "Golden Temple",
+                        location: "Punjab",
+                        onClick: () {},
+                      ),
+                      SizedBox(width: 23),
+                      PropertyCard(
+                        imageUrl: "assets/image_property2.png",
+                        title: "Mahalakshmi",
+                        location: "Tamil Nadu",
                         onClick: () {},
                       ),
                       SizedBox(width: 23),
@@ -193,14 +215,20 @@ class HomePage extends StatelessWidget {
                     children: [
                       PopularCard(
                         imageUrl: "assets/image_popular1.png",
-                        title: "Misty Rock Resort",
-                        location: "Wayanard",
+                        title: "Jagannath",
+                        location: "Orissa",
                       ),
                       SizedBox(width: 15),
                       PopularCard(
                         imageUrl: "assets/image_popular2.png",
-                        title: "Misty Rock Resort",
-                        location: "Wayanard",
+                        title: "Bodhgaya",
+                        location: "Bihar",
+                      ),
+                      SizedBox(width: 23),
+                      PopularCard(
+                        imageUrl: "assets/image_popular2.png",
+                        title: "Ajmer Sharif",
+                        location: "Rajasthan",
                       ),
                       SizedBox(width: 23),
                     ],
@@ -225,7 +253,7 @@ class HomePage extends StatelessWidget {
             children: [
               header(),
               findYourStay(),
-              ourProperties(),
+              exploreThese(),
               popular(),
             ],
           ),
